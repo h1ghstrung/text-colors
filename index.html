@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Generate colored text for use in emails, message boards, and some games like minecraft.">
+  <meta name="author" content="h1ghstrung">
+  <meta name="keywords" content="minecraft, text, color, generator, color generator">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="textcolorgen.css">
+  <script src="textcolor.js" async></script>
+  <title>Text Color Generator</title>
+</head>
+
+<body>
+  <h1>Text Color Generator</h1>
+  <h2>Generate colored text for minecraft servers that allow access to the /nick command.</h2>
+  <h4>Idea expanded from a google sheets file found <a href="https://docs.google.com/spreadsheets/d/1kfWqaXifF4p9FO7lpfWz9lzEMzTxQDDsHzFRA2H9QpY/edit#gid=0">here</a>.</h4>
+  <div>
+    <label for="baseText">Enter text to colorize</label><br />
+    <input type="text" id="baseText" placeholder="Hello, World!" />
+  </div>
+  <div>
+    <label for="startColor">Starting Color: </label><input type="color" id="startColor" value="#ffffff" /><div class="" id="startColorVal">#ffffff</div><br />
+    <label for="endColor">Ending Color: </label><input type="color" id="endColor" value="#1a88a2" /><div class="" id="endColorVal">#1a88a2</div>
+  </div>
+  <div>
+    <label for="numberOfSteps">Number of steps: </label><input type="text" id="numberOfSteps" placeholder="12" />
+  </div>
+  <div><button id="submit">Show Me!</button></div>
+  <div id="outputCode">
+    <div>Minecraft Command: <span id="outputMCCode">/nick #1a88a2H#4321E2e...</span></div>
+    <div>Hex Code: <span id="outputHexCode">#1a88a2H#4321E2e...</span></div>
+  </div>
+  <div id="previewArea">
+    <div class="chatwrapper">
+      <div class="fontwrapper" id="fontblock">
+        <!-- Print out hex codes with string letters in this section -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
