@@ -23,20 +23,28 @@
   <h1>Text Color Generator</h1>
   <h2>Generate colored text for minecraft servers that allow access to the /nick command.</h2>
   <h4>Idea expanded from a google sheets file found <a href="https://docs.google.com/spreadsheets/d/1kfWqaXifF4p9FO7lpfWz9lzEMzTxQDDsHzFRA2H9QpY/edit#gid=0">here</a>.</h4>
-  <div>
-    <label for="baseText">Enter text to colorize</label><br />
-    <input type="text" id="baseText" placeholder="Hello, World!" />
-  </div>
-  <div>
-    <label for="startColor">Starting Color: </label><br />
-    <input type="color" id="startColor" value="#ffffff" /><div class="" id="startColorVal">#ffffff</div><br />
-    <label for="endColor">Ending Color: </label><br />
-    <input type="color" id="endColor" value="#1a88a2" /><div class="" id="endColorVal">#1a88a2</div>
+  <div class="flexwrapper">
+    <div class="hpa-2">
+      <label for="baseText">Enter text to colorize</label><br />
+      <input type="text" id="baseText" placeholder="Hello, World!" />
+    </div>
+      <div>
+        <label for="startColor">Starting Color: </label><br />
+        <div class="flexwrapper">
+          <input type="color" class="sidebyside" id="startColor" value="#ffffff" /><div class="hpa-2" id="startColorVal">#ffffff</div>
+        </div>
+      </div>
+      <div>
+        <label for="endColor">Ending Color: </label><br />
+        <div class="flexwrapper">
+          <input type="color" class="sidebyside" id="endColor" value="#1a88a2" /><div class="" id="endColorVal">#1a88a2</div>
+        </div>
+      </div>
   </div>
   <div>
     <label for="numberOfSteps">Number of steps: </label><input type="text" id="numberOfSteps" placeholder="12" />
   </div>
-  <div><button id="submit">Show Me!</button></div>
+  <div class="w100"><button class="btn-1" id="submit">Show Me!</button></div>
   <div id="outputCode">
     <div>Minecraft Command: <span id="outputMCCode">/nick #1a88a2H#4321E2e...</span></div>
     <div>Hex Code: <span id="outputHexCode">#1a88a2H#4321E2e...</span></div>
