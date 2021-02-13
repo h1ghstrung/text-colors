@@ -49,9 +49,10 @@ stepNumber.addEventListener('change', function(){
 submit.addEventListener('click', function() {
   let usrArray = textToArray(userText);
   let usrGradient = gradient(hexToRGB(startingColor.value.slice(1)), hexToRGB(endingColor.value.slice(1)), stepNumber.value);
-  output = concatHex(usrGradient, usrArray);
+  output = concatHex(usrGradient.grarray, usrArray);
+  mcoutput = concatHex(usrGradient.mcarray, usrArray);
   outputHex.textContent = output;
-  outputMinecraft.textContent = "/nick " + output;
+  outputMinecraft.textContent = "/nick " + mcoutput;
   colorfy(output);
 })
 
@@ -134,11 +135,13 @@ const gradient = (start, end, steps) => {
   let brange = colorStepper(start[2], end[2], steps);
   // let grtable = {};
   let grarray = [];
+  let mcarray = [];
   for (i=0; i<steps; i++) {
     // grtable[i] = rgbToHex([rrange[i], grange[i], brange[i]]);
     grarray.push(rgbToHex([rrange[i], grange[i], brange[i]]));
+    mcarray.push("&" + rgbToHex([rrange[i], grange[i], brange[i]]));
   }
-  return grarray
+  return {grarray, mcarray}
 };
 
 /**
